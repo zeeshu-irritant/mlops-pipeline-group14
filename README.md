@@ -57,3 +57,13 @@ To inspect dataset health metrics and run the cleaning rules locally:
 python src/prepare_data.py
 ```
 
+## 📈 Pipeline Progress Checklist
+- [x] **Task 1:** Set Up GitHub Repository & Branch Protection
+- [x] **Task 2:** Data Cleaning & Normalisation Module
+- [ ] **Task 3:** Hugging Face Model Selection & Loader
+- [ ] **Task 4:** Kaggle Training Pipelines & W&B Tracking
+- [ ] **Task 5:** Hugging Face Hub Model Deployment
+- [ ] **Task 6:** Docker Containerization for Inference
+- [ ] **Task 7:** GitHub Actions Automation Workflows
+- [ ] **Task 8:** Show All Experiments on W&B
+- [ ] **Report (PDF):** Final Documentation Compilation
