@@ -5,7 +5,7 @@ An end-to-end, production-style MLOps pipeline for automated text emotion classi
 ## 👥 Group Members & Contributions
 * **Zeeshan Akhtar** (G25AIT2135) - Task 1 & 2 Setup, Repository Architecture
 * **Nikunj R Patel** (G25AIT2072) - Task 3 & 4 Hugging Face Model Selection & Loader ; Kaggle Training Pipelines & W&B Tracking
-* **Member 3 Name** (Roll No) - [Contribution]
+* **Rodosi Biswas** (G25AIT2088) - Task 5 & 6 Hugging Face Hub Model Deployment, Docker Containerization for Inference
 * **Member 4 Name** (Roll No) - [Contribution]
 
 ## 🛠️ Project Architecture
@@ -62,8 +62,8 @@ python src/prepare_data.py
 - [x] **Task 2:** Data Cleaning & Normalisation Module
 - [x] **Task 3:** Hugging Face Model Selection & Loader
 - [x] **Task 4:** Kaggle Training Pipelines & W&B Tracking
-- [ ] **Task 5:** Hugging Face Hub Model Deployment
-- [ ] **Task 6:** Docker Containerization for Inference
+- [x] **Task 5:** Hugging Face Hub Model Deployment
+- [x] **Task 6:** Docker Containerization for Inference
 - [ ] **Task 7:** GitHub Actions Automation Workflows
 - [ ] **Task 8:** Show All Experiments on W&B
 - [ ] **Report (PDF):** Final Documentation Compilation
