@@ -1,16 +1,16 @@
-# Use a lightweight Python base image
 FROM python:3.10-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy our requirements and install them
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of our application code into the container
 COPY src/ src/
 COPY data/ data/
 
-# Define the default command to run when the container starts
-CMD ["python", "src/inference.py"]
+EXPOSE 8000
+EXPOSE 8501
+
+CMD uvicorn src.api:app --host 0.0.0.0 --port 8000 & streamlit run src/ui.py --server.port 8501 --server.address 0.0.0.0
