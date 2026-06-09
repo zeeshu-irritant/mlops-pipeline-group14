@@ -47,9 +47,9 @@ mlops-pipeline-group14/
 ├── data/
 │   └── id2label.json     # Label-to-text configuration mapping
 ├── notebooks/            # Team experimentation & model tracking
-│   ├── nikunj/           # Experimentation sandbox for Team Member Rodosi
+│   ├── nikunj/           # Experimentation sandbox for Team Member Nikunj
 │   ├── rodosi/           # Experimentation sandbox for Team Member Rodosi
-│   └── sharvan/          # Experimentation sandbox for Team Member Sharvan
+│   ├── sharvan/          # Experimentation sandbox for Team Member Sharvan
 │   └── zeeshan/          # Experimentation sandbox for Team Member Zeeshan
 ├── src/                  # Production application codebase
 │   ├── api.py            # FastAPI REST backend for model inference
