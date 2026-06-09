@@ -13,23 +13,28 @@ An end-to-end, production-style MLOps pipeline for automated text emotion classi
 - **Dataset:** `dair-ai/emotion` (Text Emotion Dataset)
 - **Model Architecture:** `distilbert-base-uncased` (~260MB base)
 
-## 📁 Repository Directory Structure
+## 📂 Repository Directory Structure
 
 ```text
 mlops-pipeline-group14/
 ├── .github/workflows/
-│   ├── ci.yml            # Code quality check workflow
+│   ├── ci.yml            # Code quality check workflow (GitHub Actions)
 │   └── inference.yml     # Automated inference workflow
-├── src/
-│   ├── prepare_data.py   # Data cleaning & normalization script
-│   └── inference.py      # Inference/prediction execution logic
 ├── data/
-│   └── id2label.json     # Label to text configuration mapping
+│   └── id2label.json     # Label-to-text configuration mapping
+├── notebooks/            # Team experimentation & model tracking
+│   ├── nikunj/           # Experimentation sandbox for Team Member Rodosi
+│   ├── rodosi/           # Experimentation sandbox for Team Member Rodosi
+│   └── sharvan/          # Experimentation sandbox for Team Member Sharvan
+│   └── zeeshan/          # Experimentation sandbox for Team Member Zeeshan
+├── src/                  # Production application codebase
+│   ├── prepare_data.py   # Production data cleaning & normalization script
+│   └── inference.py      # Core inference execution logic (pulls from HF Hub)
 ├── .gitignore            # Git exclusion rules
 ├── Dockerfile            # Container deployment blueprint
-├── LICENSE               # Open-source license
-├── README.md             # Project documentation
-└── requirements.txt      # System package dependencies
+├── LICENSE               # Open-source project license
+├── README.md             # Project documentation and onboarding guide
+└── requirements.txt      # System-wide Python package dependencies
 ```
 
 ## 🚀 Getting Started
