@@ -13,5 +13,4 @@ COPY data/ data/
 EXPOSE 8000
 EXPOSE 8501
 
-CMD ["python", "src/inference.py"]
 CMD uvicorn src.api:app --host 0.0.0.0 --port 8000 & streamlit run src/ui.py --server.port 8501 --server.address 0.0.0.0
