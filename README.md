@@ -6,7 +6,7 @@ An end-to-end, production-style MLOps pipeline for automated text emotion classi
 * **Zeeshan Akhtar** (G25AIT2135) - Task 1 & 2 Setup, Repository Architecture
 * **Nikunj R Patel** (G25AIT2072) - Task 3 & 4 Hugging Face Model Selection & Loader ; Kaggle Training Pipelines & W&B Tracking
 * **Rodosi Biswas** (G25AIT2088) - Task 5 & 6 Hugging Face Hub Model Deployment, Docker Containerization for Inference
-* **Member 4 Name** (Roll No) - [Contribution]
+* **Sharvan Vittala** (Roll No) - [Contribution]
 
 ## 🛠️ Project Architecture
 - **Modality:** Text
@@ -67,3 +67,30 @@ python src/prepare_data.py
 - [ ] **Task 7:** GitHub Actions Automation Workflows
 - [ ] **Task 8:** Show All Experiments on W&B
 - [ ] **Report (PDF):** Final Documentation Compilation
+
+---
+
+## 👥 Team MLOps Onboarding Guide
+
+To collaborate on experiments and ensure all logs sync to our centralized dashboards, every team member must configure their Kaggle environment using our shared team credentials.
+
+### 1. Centralized Dashboards
+* **Weights & Biases Project:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
+* **Hugging Face Model Registry:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+
+### 2. Kaggle Environment Setup (Mandatory)
+Before running any notebooks in the `notebooks/` directory, you must add our shared API keys to your personal Kaggle account. 
+
+1. Open your notebook on Kaggle.
+2. In the top menu, go to **Add-ons** -> **Secrets**.
+3. Add the following two secrets exactly as written (retrieve the raw token values from our private team chat):
+   * **Label:** `WANDB_API_KEY` | **Value:** *[Our shared W&B key]*
+   * **Label:** `HF_TOKEN`      | **Value:** *[Our shared Hugging Face write token]*
+4. Ensure the checkboxes next to both secrets are **checked** to attach them to your notebook session.
+5. In the right-hand panel under **Session Options**, ensure **Internet on** is enabled.
+
+### 3. Notebook Contribution Workflow
+When saving your work from Kaggle back to GitHub:
+1. Ensure your notebook is named following our convention: `notebooks/[your_name]/expX_[description].ipynb`.
+2. Use the **Save to GitHub** option under the three dots (`...`) menu in Kaggle.
+3. Target the active development branch (e.g., `feature/task4-kaggle-notebooks`), **never** push directly to `main` or `develop`.
