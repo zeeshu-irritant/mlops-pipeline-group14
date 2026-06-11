@@ -26,7 +26,7 @@ Our project was built systematically in distinct stages to mirror industry-stand
 * **Zeeshan Akhtar** (G25AIT2135)
 * **Nikunj R Patel** (G25AIT2072)
 * **Rodosi Biswas** (G25AIT2088)
-* **Sharvan Vittala** (Roll No)
+* **Sharvan Vittala** (G25AIT2099)
 
 ---
 
