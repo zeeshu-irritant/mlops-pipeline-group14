@@ -7,7 +7,7 @@ from transformers import pipeline
 # Initialize FastAPI app
 app = FastAPI(title="Emotion Classification API", version="1.0")
 
-MODEL_ID = "zeeshan-hf/mlops-emotion-distilbert-group14"
+MODEL_ID = os.environ.get("HF_MODEL_NAME", "zeeshan-hf/mlops-emotion-distilbert-group14")
 MAPPING_PATH = os.path.join("data", "id2label.json")
 
 # Define the expected request payload structure

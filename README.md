@@ -1,7 +1,7 @@
 # 🧠 MLOps Emotion Classification Pipeline (Group 14)
 
 [![CI - Code Quality](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml)
-[![CD - Automated Inference](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml)
+[![Docker Smoke Test](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/docker-smoke-test.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/docker-smoke-test.yml)
 
 ## 📌 Project Overview
 This repository contains a complete, end-to-end Machine Learning Operations (MLOps) pipeline. Our team fine-tuned a **DistilBERT** model to classify text into human emotions (Joy, Anger, Surprise, etc.). We then transitioned the model from raw experimental notebooks into a production-ready, containerized microservice architecture featuring an automated CI/CD pipeline.
@@ -150,8 +150,8 @@ When saving your work from Kaggle back to GitHub:
 - [x] **Task 4:** Kaggle Training Pipelines & W&B Tracking
 - [x] **Task 5:** Hugging Face Hub Model Deployment
 - [x] **Task 6:** Docker Containerization for Inference
-- [ ] **Task 7:** GitHub Actions Automation Workflows
-- [ ] **Task 8:** Show All Experiments on W&B
+- [x] **Task 7:** GitHub Actions Automation Workflows
+- [x] **Task 8:** Show All Experiments on W&B
 - [ ] **Report (PDF):** Final Documentation Compilation
 
 ---
