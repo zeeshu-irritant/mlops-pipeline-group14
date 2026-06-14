@@ -1,0 +1,30 @@
+name: Docker Smoke Test
+
+# Builds the inference image and runs it once on every push, to make sure
+# the container still pulls the model and produces a prediction end-to-end.
+on:
+  push:
+    branches: [ develop, main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker Image
+      run: |
+        docker build -t mlops-emotion-inference:latest .
+
+    - name: Run Automated Inference Smoke Test
+      run: |
+        docker run --rm \
+          -e HF_HUB_DISABLE_SYMLINKS_WARNING=1 \
+          -e TRANSFORMERS_VERBOSITY=error \
+          -e HF_HUB_VERBOSITY=error \
+          mlops-emotion-inference:latest

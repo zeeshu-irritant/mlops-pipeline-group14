@@ -32,16 +32,20 @@ def inspect_and_clean_data():
         text = text.strip()  # Remove trailing whitespaces
         return text
 
-    print("\nExecuting Data Cleaning Pipeline...")
-    for df in [train_df, val_df]:
+    def clean_split(df):
         # Handle potential missing text values
-        df.dropna(subset=["text"], inplace=True)
+        df = df.dropna(subset=["text"]).copy()
         # Apply standard normalisation
         df["text"] = df["text"].apply(clean_text)
         # Drop rows where text became empty after clearing punctuation
         df = df[df["text"] != ""]
         # Remove duplicate rows
-        df.drop_duplicates(subset=["text"], inplace=True)
+        df = df.drop_duplicates(subset=["text"])
+        return df
+
+    print("\nExecuting Data Cleaning Pipeline...")
+    train_df = clean_split(train_df)
+    val_df = clean_split(val_df)
 
     print(f"Cleaned Train Size: {len(train_df)} rows")
     print(f"Cleaned Validation Size: {len(val_df)} rows")
