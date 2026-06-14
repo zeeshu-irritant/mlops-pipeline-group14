@@ -121,8 +121,8 @@ docker run --rm \
 To collaborate on experiments and ensure all logs sync to our centralized dashboards, every team member must configure their Kaggle environment using our shared team credentials.
 
 ### 1. Centralized Dashboards
-* **Weights & Biases Project:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
-* **Hugging Face Model Registry:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+* **Weights & Biases Project:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+* **Hugging Face Model Registry:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
 
 ### 2. Kaggle Environment Setup (Mandatory)
 Before running any notebooks in the `notebooks/` directory, you must add our shared API keys to your personal Kaggle account. 
