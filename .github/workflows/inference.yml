@@ -1,33 +1,27 @@
-name: Automated Inference Check (CD)
+name: Inference
 
-# Only run this when code is officially merged into develop or main
+# Manually triggered classification run (Task 7.2)
 on:
-  push:
-    branches: [ develop, main ]
+  workflow_dispatch:
+    inputs:
+      input_text:
+        description: 'Text to classify'
+        required: true
 
 jobs:
-  build-and-test:
+  infer:
     runs-on: ubuntu-latest
-
     steps:
-    # Check out the repository code
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    # Set up the Docker Buildx environment
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    # Build the Docker image in the cloud (just like we did in Codespaces)
-    - name: Build Docker Image
-      run: |
-        docker build -t mlops-emotion-inference:latest .
+      - run: pip install -r requirements.txt
 
-    # Run the container to ensure model downloads and infers correctly
-    - name: Run Automated Inference Smoke Test
-      run: |
-        docker run --rm \
-          -e HF_HUB_DISABLE_SYMLINKS_WARNING=1 \
-          -e TRANSFORMERS_VERBOSITY=error \
-          -e HF_HUB_VERBOSITY=error \
-          mlops-emotion-inference:latest
+      - name: Run inference on the supplied text
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          INPUT_TEXT: ${{ github.event.inputs.input_text }}
+        run: python src/inference.py

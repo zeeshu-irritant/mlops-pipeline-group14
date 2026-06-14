@@ -2,7 +2,7 @@ import os
 import json
 from transformers import pipeline
 
-MODEL_ID = "zeeshan-hf/mlops-emotion-distilbert-group14"
+MODEL_ID = os.environ.get("HF_MODEL_NAME", "zeeshan-hf/mlops-emotion-distilbert-group14")
 MAPPING_PATH = os.path.join("data", "id2label.json")
 
 def load_mapping():
@@ -37,17 +37,24 @@ def predict(classifier, text, label_mapping):
     return prediction
 
 if __name__ == "__main__":
-    sample_texts = [
-        "I am so incredibly proud of my team for finishing this MLOps project!",
-        "The server crashed right before the deadline, and I am furious.",
-        "I honestly didn't expect the accuracy to jump that high."
-    ]
-    
+    # The GitHub Actions inference workflow passes the text to classify via
+    # the INPUT_TEXT env var. When it is absent (local runs / Docker smoke
+    # test) we fall back to a few sample sentences.
+    input_text = os.environ.get("INPUT_TEXT", "").strip()
+    if input_text:
+        texts = [input_text]
+    else:
+        texts = [
+            "I am so incredibly proud of my team for finishing this MLOps project!",
+            "The server crashed right before the deadline, and I am furious.",
+            "I honestly didn't expect the accuracy to jump that high."
+        ]
+
     # Load configuration mapping and model
     label_mapping = load_mapping()
     classifier = load_model()
-    
+
     print("\n--- Starting Inference ---")
-    for text in sample_texts:
+    for text in texts:
         predict(classifier, text, label_mapping)
     print("--- Inference Complete ---")
