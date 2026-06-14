@@ -1,7 +1,7 @@
 # 🧠 MLOps Emotion Classification Pipeline (Group 14)
 
-[![CI - Code Quality](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/mlops-pipeline-group14/actions/workflows/ci.yml)
-[![CD - Automated Inference](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml/badge.svg)](https://github.com/your-username/mlops-pipeline-group14/actions/workflows/inference.yml)
+[![CI - Code Quality](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml)
+[![CD - Automated Inference](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml)
 
 ## 📌 Project Overview
 This repository contains a complete, end-to-end Machine Learning Operations (MLOps) pipeline. Our team fine-tuned a **DistilBERT** model to classify text into human emotions (Joy, Anger, Surprise, etc.). We then transitioned the model from raw experimental notebooks into a production-ready, containerized microservice architecture featuring an automated CI/CD pipeline.
@@ -121,8 +121,8 @@ docker run --rm \
 To collaborate on experiments and ensure all logs sync to our centralized dashboards, every team member must configure their Kaggle environment using our shared team credentials.
 
 ### 1. Centralized Dashboards
-* **Weights & Biases Project:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
-* **Hugging Face Model Registry:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+* **Weights & Biases Project:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+* **Hugging Face Model Registry:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
 
 ### 2. Kaggle Environment Setup (Mandatory)
 Before running any notebooks in the `notebooks/` directory, you must add our shared API keys to your personal Kaggle account. 
