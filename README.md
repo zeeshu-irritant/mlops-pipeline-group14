@@ -1,7 +1,7 @@
 # 🧠 MLOps Emotion Classification Pipeline (Group 14)
 
-[![CI - Code Quality](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/mlops-pipeline-group14/actions/workflows/ci.yml)
-[![CD - Automated Inference](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml/badge.svg)](https://github.com/your-username/mlops-pipeline-group14/actions/workflows/inference.yml)
+[![CI - Code Quality](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/ci.yml)
+[![CD - Automated Inference](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml/badge.svg)](https://github.com/zeeshu-irritant/mlops-pipeline-group14/actions/workflows/inference.yml)
 
 ## 📌 Project Overview
 This repository contains a complete, end-to-end Machine Learning Operations (MLOps) pipeline. Our team fine-tuned a **DistilBERT** model to classify text into human emotions (Joy, Anger, Surprise, etc.). We then transitioned the model from raw experimental notebooks into a production-ready, containerized microservice architecture featuring an automated CI/CD pipeline.
