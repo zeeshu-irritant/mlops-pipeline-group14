@@ -30,4 +30,4 @@ jobs:
           -e HF_HUB_DISABLE_SYMLINKS_WARNING=1 \
           -e TRANSFORMERS_VERBOSITY=error \
           -e HF_HUB_VERBOSITY=error \
-          mlops-emotion-inference:latest
+          mlops-emotion-inference:latest python src/inference.py
