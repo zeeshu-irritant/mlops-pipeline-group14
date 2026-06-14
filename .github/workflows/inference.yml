@@ -1,0 +1,35 @@
+name: Automated Inference Check (CD)
+
+# Only run this when code is officially merged into develop or main
+on:
+  push:
+    branches: [ develop, main ]
+  pull_request:
+    branches: [ develop, main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Check out the repository code
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # Set up the Docker Buildx environment
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    # Build the Docker image in the cloud (just like we did in Codespaces)
+    - name: Build Docker Image
+      run: |
+        docker build -t mlops-emotion-inference:latest .
+
+    # Run the container to ensure model downloads and infers correctly
+    - name: Run Automated Inference Smoke Test
+      run: |
+        docker run --rm \
+          -e HF_HUB_DISABLE_SYMLINKS_WARNING=1 \
+          -e TRANSFORMERS_VERBOSITY=error \
+          -e HF_HUB_VERBOSITY=error \
+          mlops-emotion-inference:latest python src/inference.py
