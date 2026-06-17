@@ -12,10 +12,10 @@ This repository contains a complete, end-to-end Machine Learning Operations (MLO
 
 Our project was built systematically in distinct stages to mirror industry-standard MLOps practices:
 
-1. **Experimentation & Training (Kaggle):** We used Kaggle's GPU environments to clean the dataset and fine-tune a pre-trained DistilBERT model.
-2. **Experiment Tracking (Weights & Biases):** All hyperparameter sweeps, loss metrics, and hardware utilization stats were automatically logged to a centralized W&B team dashboard.
-3. **Model Registry (Hugging Face):** The highest-performing model weights were pushed to the Hugging Face Model Hub, completely decoupling our model storage from our codebase.
-4. **Microservice Containerization (Docker):** We built a dual-service Docker container. It pulls the model from Hugging Face and simultaneously spins up:
+1. **Experimentation & Training (Kaggle):** We used Kaggle's GPU environments to clean the dataset and fine-tune a pre-trained DistilBERT model. ([Sharvan](https://www.kaggle.com/code/g25ait2099/mlops-group-assignment-3) | [Nikunj](https://www.kaggle.com/code/patelnikunjr/mlops-group14-experiment-1-0-nikunj) | [Zeeshan](https://www.kaggle.com/code/zeeshang25ait2135/mlops-group14-experiment-1) | [Rodosi](https://www.kaggle.com/code/rodosibiswas/rodosi-experiment1-optimized))
+2. **Experiment Tracking (Weights & Biases):** All hyperparameter sweeps, loss metrics, and hardware utilization stats were automatically logged to a [centralized W&B team dashboard](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification?nw=nwuserzeeshuirritant).
+3. **Model Registry (Hugging Face):** The highest-performing model weights were pushed to the [Hugging Face Model Hub](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14), completely decoupling our model storage from our codebase.
+4. **Microservice Containerization (Docker):** We built a dual-service [Docker container](https://hub.docker.com/r/sharvanvittala/mlops_assignment_3). It pulls the model from Hugging Face and simultaneously spins up:
    * **FastAPI Backend:** A high-performance REST API handling the inference logic.
    * **Streamlit Frontend:** An interactive web dashboard for user input and visualization.
 5. **Continuous Integration & Deployment (GitHub Actions):** Every push to `develop` or `main` triggers automated Python linting (Flake8) and builds the Docker container in the cloud to run a "smoke test," ensuring production code is never broken.
@@ -121,8 +121,14 @@ docker run --rm \
 To collaborate on experiments and ensure all logs sync to our centralized dashboards, every team member must configure their Kaggle environment using our shared team credentials.
 
 ### 1. Centralized Dashboards
-* **Weights & Biases Project:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification)
+* **Weights & Biases Project:** [WANDB.ai | mlops-emotion-classification](https://wandb.ai/zeeshu-irritant-prom-iit-rajasthan/mlops-emotion-classification?nw=nwuserzeeshuirritant)
 * **Hugging Face Model Registry:** [Hugging Face | mlops-emotion-distilbert-group14](https://huggingface.co/zeeshan-hf/mlops-emotion-distilbert-group14)
+* **Docker Hub Image:** [Docker Hub | sharvanvittala/mlops_assignment_3](https://hub.docker.com/r/sharvanvittala/mlops_assignment_3)
+* **Kaggle Notebooks:**
+  * [Sharvan Vittala](https://www.kaggle.com/code/g25ait2099/mlops-group-assignment-3)
+  * [Nikunj Patel](https://www.kaggle.com/code/patelnikunjr/mlops-group14-experiment-1-0-nikunj)
+  * [Zeeshan Akhtar](https://www.kaggle.com/code/zeeshang25ait2135/mlops-group14-experiment-1)
+  * [Rodosi Biswas](https://www.kaggle.com/code/rodosibiswas/rodosi-experiment1-optimized)
 
 ### 2. Kaggle Environment Setup (Mandatory)
 Before running any notebooks in the `notebooks/` directory, you must add our shared API keys to your personal Kaggle account. 
